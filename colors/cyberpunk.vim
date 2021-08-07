@@ -176,7 +176,6 @@ hi typescriptAliasDeclaration guifg=#FAD000 ctermfg=220 guibg=NONE ctermbg=NONE 
 hi typescriptInterfaceKeyword guifg=#FFFC58 ctermfg=229 guibg=NONE ctermbg=NONE gui=Italic cterm=Italic
 hi typescriptAliasKeyword guifg=#FFFC58 ctermfg=229 guibg=NONE ctermbg=NONE gui=Italic cterm=Italic
 hi typescriptExport guifg=#FF9D00 ctermfg=214 guibg=NONE ctermbg=NONE gui=Italic cterm=Italic
-hi Identifier guifg=#FAD000 ctermfg=214 guibg=NONE ctermbg=NONE gui=Bold cterm=Bold
 
 if exists('*term_setansicolors')
   let g:terminal_ansi_colors = repeat([0], 16)
