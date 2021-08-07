@@ -52,7 +52,7 @@ hi WildMenu guifg=#00FFC8 ctermfg=NONE guibg=NONE ctermbg=234 gui=Bold cterm=Bol
 hi Comment guifg=#6766b3 ctermfg=135 guibg=NONE ctermbg=NONE gui=Italic cterm=Italic
 hi Constant guifg=#fffc58 ctermfg=204 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi String guifg=#76C1FF ctermfg=156 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Identifier guifg=#FAD000 ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi Identifier guifg=#FAD000 ctermfg=14 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Function guifg=#d57bff ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Conditional guifg=#76C1FF ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Operator guifg=#76C1FF ctermfg=214 gui=NONE cterm=NONE
@@ -63,7 +63,6 @@ hi Special guifg=#00FF9C ctermfg=159 guibg=NONE ctermbg=NONE gui=Italic cterm=It
 hi Underlined guifg=#cad7e5 ctermfg=188 guibg=NONE ctermbg=NONE gui=underline cterm=underline
 hi Error guifg=#ff3270 ctermfg=203 guibg=NONE ctermbg=NONE gui=underline cterm=underline
 hi Todo guifg=#00FF9C ctermfg=202 guibg=#372963 ctermbg=NONE gui=underline cterm=underline
-hi Identifier guifg=#FAD000 ctermfg=14 guibg=NONE ctermbg=NONE gui=underline cterm=Bold
 
 
 hi cssTagName guifg=#6AAEFE ctermfg=204 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
