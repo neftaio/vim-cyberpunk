@@ -52,7 +52,7 @@ hi WildMenu guifg=#00FFC8 ctermfg=NONE guibg=NONE ctermbg=234 gui=Bold cterm=Bol
 hi Comment guifg=#6766b3 ctermfg=135 guibg=NONE ctermbg=NONE gui=Italic cterm=Italic
 hi Constant guifg=#fffc58 ctermfg=204 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi String guifg=#76C1FF ctermfg=156 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi Identifier guifg=#EEFFFF ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi Identifier guifg=#FAD000 ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Function guifg=#d57bff ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Conditional guifg=#76C1FF ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi Operator guifg=#76C1FF ctermfg=214 gui=NONE cterm=NONE
