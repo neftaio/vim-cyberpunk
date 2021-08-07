@@ -63,11 +63,7 @@ hi Special guifg=#00FF9C ctermfg=159 guibg=NONE ctermbg=NONE gui=Italic cterm=It
 hi Underlined guifg=#cad7e5 ctermfg=188 guibg=NONE ctermbg=NONE gui=underline cterm=underline
 hi Error guifg=#ff3270 ctermfg=203 guibg=NONE ctermbg=NONE gui=underline cterm=underline
 hi Todo guifg=#00FF9C ctermfg=202 guibg=#372963 ctermbg=NONE gui=underline cterm=underline
-
-
-
-
-
+hi Identifier guifg=#FAD000 ctermfg=14 guibg=NONE ctermbg=NONE gui=underline cterm=Bold
 
 
 hi cssTagName guifg=#6AAEFE ctermfg=204 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
