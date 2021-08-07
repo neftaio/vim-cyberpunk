@@ -1,7 +1,8 @@
 # vim-cyberpunk
 
 Cyberpunk colorscheme for VIM. Also includes vim-airline theme.
-Thanks to [thedenisnikulin](https://github.com/thedenisnikulin) for the original project
+Thanks to [thedenisnikulin](https://github.com/thedenisnikulin) and [Rigellute
+](https://github.com/Rigellute/shades-of-purple.vim) for the original projects
 
 ## Install
 

@@ -1,106 +1,193 @@
-highlight clear
+set background=dark
+hi clear
 if exists("syntax_on")
   syntax reset
 endif
+let g:colors_name="cyberpunk"
 
-set background=dark
-let g:colors_name = "cyberpunk"
 
-function! HighlightFor(group, ...)
-  execute "hi ".a:group
-        \ ." guifg=".a:1
-        \ ." guibg=".a:2
-        \ ." gui=".a:3
-endfunction
+let Italic = ""
+if exists('g:cyberpunk_italic')
+  let Italic = "italic"
+endif
+let g:cyberpunk_italic = get(g:, 'cyberpunk_italic', 0)
 
-" general 
-call HighlightFor("Normal",      "#FF0055", "#120b10", "NONE") " old bg: #1a1018
-call HighlightFor("Visual",      "NONE",    "#563466", "NONE")
-call HighlightFor("ColorColumn", "NONE",    "#182333", "NONE")
-call HighlightFor("LineNr",      "#FF0055", "NONE",    "NONE")
-call HighlightFor("SignColumn",  "#00FFC8", "NONE",    "NONE")
+let Bold = ""
+if exists('g:cyberpunk_bold')
+  let Bold = "bold"
+endif
 
-call HighlightFor("DiffAdd",    "NONE", "NONE",    "NONE")
-call HighlightFor("DiffDelete", "NONE", "#ff1745", "NONE" )
-call HighlightFor("DiffText",   "NONE", "#00ff84", "NONE")
-call HighlightFor("DiffChange", "NONE", "NONE",    "NONE")
+let g:cyberpunk_bold = get(g:, 'cyberpunk_bold', 0)
+hi ColorColumn guifg=NONE ctermfg=NONE guibg=#182333 ctermbg=234 gui=NONE cterm=NONE
+hi Cursor guifg=NONE ctermfg=NONE guibg=#00FFC8 ctermbg=220 gui=NONE cterm=NONE
+hi CursorColumn guifg=NONE ctermfg=NONE guibg=NONE ctermbg=234 gui=NONE cterm=NONE
+hi CursorLine guifg=#140007 ctermfg=NONE guibg=#FF0055 ctermbg=234 gui=Bold cterm=Bold
+hi DiffAdd guifg=NONE ctermfg=10 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi DiffChange guifg=NONE ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi DiffDelete guifg=NONE ctermfg=9 guibg=#ff1745 ctermbg=NONE gui=NONE cterm=NONE
+hi DiffText guifg=NONE ctermfg=195 guibg=#00ff84 ctermbg=NONE gui=NONE cterm=NONE
+hi ErrorMsg guifg=#ff3270 ctermfg=203 guibg=NONE ctermbg=NONE gui=underline cterm=underline
+hi VertSplit guifg=#FF0055 ctermfg=140 guibg=#101116 ctermbg=235 gui=NONE cterm=NONE
+hi Folded guifg=#00FFC8 ctermfg=140 guibg=NONE ctermbg=234 gui=Italic cterm=Italic
+hi SignColumn guifg=#00FFC8 ctermfg=140 guibg=NONE ctermbg=235 gui=NONE cterm=NONE
+hi LineNr guifg=#FF0055 ctermfg=140 guibg=NONE ctermbg=235 gui=NONE cterm=NONE
+hi CursorLineNr guifg=#00FFC8 ctermfg=195 guibg=#00FFC8 ctermbg=235 gui=NONE cterm=NONE
+hi MatchParen guifg=#FF0055 ctermfg=236 guibg=#00FFC8 ctermbg=229 gui=NONE cterm=NONE
+hi NonText guifg=#2B3E5A ctermfg=140 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi Normal guifg=#FF0055 ctermfg=195 guibg=#120b10 ctermbg=236 gui=NONE cterm=NONE
+hi PMenu guifg=#ff0055 ctermfg=140 guibg=#140007 ctermbg=235 gui=NONE cterm=NONE
+hi PMenuSel guifg=#140007 ctermfg=159 guibg=#ff0055 ctermbg=236 gui=NONE cterm=NONE
+hi Search guifg=NONE ctermfg=NONE guibg=#283593 ctermbg=97 gui=NONE cterm=NONE
+hi IncSearch guifg=NONE ctermfg=234 guibg=#283593 ctermbg=11 gui=NONE cterm=NONE
+hi SpellBad guifg=#ff3270 ctermfg=204 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi StatusLine guifg=#ff0055 ctermfg=140 guibg=#1d000a ctermbg=236 gui=Bold cterm=Bold
+hi StatusLineNC guifg=#ff0055 ctermfg=140 guibg=#000000 ctermbg=234 gui=NONE cterm=NONE
+hi TabLine guifg=#FF4081 ctermfg=140 guibg=NONE ctermbg=235 gui=NONE cterm=NONE
+hi TabLineFill guifg=NONE ctermfg=235 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi TabLineSel guifg=#FF4081 ctermfg=234 guibg=NONE ctermbg=140 gui=Bold cterm=Bold
+hi Title guifg=#c592ff ctermfg=159 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi Visual guifg=NONE ctermfg=NONE guibg=#563466 ctermbg=97 gui=NONE cterm=NONE
+hi WarningMsg guifg=#009550 ctermfg=220 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi WildMenu guifg=#00FFC8 ctermfg=NONE guibg=NONE ctermbg=234 gui=Bold cterm=Bold
+hi Comment guifg=#6766b3 ctermfg=135 guibg=NONE ctermbg=NONE gui=Italic cterm=Italic
+hi Constant guifg=#fffc58 ctermfg=204 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi String guifg=#76C1FF ctermfg=156 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi Identifier guifg=#EEFFFF ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi Function guifg=#d57bff ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi Conditional guifg=#76C1FF ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi Operator guifg=#76C1FF ctermfg=214 gui=NONE cterm=NONE
+hi Type guifg=#00FF9C ctermfg=121 gui=NONE cterm=NONE
+hi StorageClass guifg=#d57bff ctermfg=214 gui=NONE cterm=NONE
+hi Structure guifg=#00FF9C ctermfg=228 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi Special guifg=#00FF9C ctermfg=159 guibg=NONE ctermbg=NONE gui=Italic cterm=Italic
+hi Underlined guifg=#cad7e5 ctermfg=188 guibg=NONE ctermbg=NONE gui=underline cterm=underline
+hi Error guifg=#ff3270 ctermfg=203 guibg=NONE ctermbg=NONE gui=underline cterm=underline
+hi Todo guifg=#00FF9C ctermfg=202 guibg=#372963 ctermbg=NONE gui=underline cterm=underline
 
-call HighlightFor("VertSplit", "#FF0055", "#101116", "NONE")
 
-call HighlightFor("IncSearch",  "NONE", "#283593", "NONE")
-call HighlightFor("Search",     "NONE", "#283593", "NONE")
-call HighlightFor("Substitute", "NONE", "#283593", "NONE")
 
-call HighlightFor("MatchParen", "#FF0055", "#00FFC8", "NONE")
-call HighlightFor("NonText",    "#2B3E5A", "NONE", "NONE")
-call HighlightFor("Whitespace", "#2B3E5A", "NONE", "NONE")
 
-call HighlightFor("WildMenu",  "#00FFC8", "NONE", "bold")
-call HighlightFor("Directory", "#00FFC8", "NONE", "NONE")
-call HighlightFor("Title",     "#c592ff", "NONE", "NONE")
 
-" Cursor {{{
-call HighlightFor("Cursor",       "#00FFC8", "NONE",    "NONE")
-call HighlightFor("CursorLine",   "#140007", "#FF0055", "bold")
-call HighlightFor("CursorLineNr", "#00FFC8", "#00FFC8", "NONE")
-call HighlightFor("CursorColumn", "NONE",    "NONE",    "NONE")
-" }}}
 
-" Code {{{
-" The following groups are not builtin but are defined commonly in syntax files
-call HighlightFor("Comment",   "#6766b3", "NONE", "italic")
-call HighlightFor("String",    "#76C1FF", "NONE", "NONE")
-call HighlightFor("Number",    "#fffc58",  "NONE", "NONE")
-call HighlightFor("Float",     "#fffc58",  "NONE", "NONE")
-call HighlightFor("Boolean",   "#fffc58",  "NONE", "NONE")
-call HighlightFor("Character", "#fffc58",  "NONE", "NONE")
 
-call HighlightFor("Conditional",  "#76C1FF", "NONE", "NONE")
-call HighlightFor("Repeat",       "#76C1FF", "NONE", "NONE")
-call HighlightFor("Label",        "#76C1FF", "NONE", "NONE")
-call HighlightFor("Exception",    "#76C1FF", "NONE", "NONE")
-call HighlightFor("Operator",     "#76C1FF", "NONE", "NONE")
-call HighlightFor("Keyword",      "#76C1FF", "NONE", "NONE")
-call HighlightFor("StorageClass", "#d57bff", "NONE", "NONE")
-call HighlightFor("Statement",    "#76C1FF", "NONE", "NONE")
+hi cssTagName guifg=#6AAEFE ctermfg=204 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi cssValueLength guifg=#FAD000 ctermfg=228 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi cssValueInteger guifg=#FAD000 ctermfg=228 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi cssValueNumber guifg=#FAD000 ctermfg=228 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi cssValueAngle guifg=#FAD000 ctermfg=228 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi cssValueTime guifg=#FAD000 ctermfg=228 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi cssValueFrequency guifg=#FAD000 ctermfg=228 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi cssColor guifg=#FAD000 ctermfg=228 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi cssIdentifier guifg=#FAD000 ctermfg=228 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi cssStringQQ guifg=#FAD000 ctermfg=228 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi cssStringQ guifg=#FAD000 ctermfg=228 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi cssClassName guifg=#00FFC8 ctermfg=159 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi cssProp guifg=#3AD900 ctermfg=156 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi cssUnitDecorators guifg=#FAD000 ctermfg=228 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsVariableDef guifg=#00FFC8 ctermfg=159 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsStorageClass guifg=#FF9D00 ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsExtendsKeyword guifg=#FF9D00 ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsTemplateString guifg=#3AD900 ctermfg=113 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsFuncCall guifg=#FAD000 ctermfg=220 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsReturn guifg=#FF9D00 ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsTryCatchBlock guifg=#FF9D00 ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsBlock guifg=#00FFC8 ctermfg=159 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsSpecial guifg=#FAD000 ctermfg=228 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsTemplateExpression guifg=#00FFC8 ctermfg=159 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsAsyncKeyword guifg=#6AAEFE ctermfg=204 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsForAwait guifg=#6AAEFE ctermfg=204 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsGlobalNodeObjects guifg=#00FFC8 ctermfg=159 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsImport guifg=#FF9D00 ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsFrom guifg=#FF9D00 ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsModuleAs guifg=#FF9D00 ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsModuleKeyword guifg=#00FFC8 ctermfg=159 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsModuleAsterisk guifg=#FF4081 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsExport guifg=#FF9D00 ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsExportDefault guifg=#FF9D00 ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsClassFuncName guifg=#FAD000 ctermfg=220 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsClassKeyword guifg=#FF9D00 ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsClassProperty guifg=#FF0055 ctermfg=195 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsThis guifg=#FB94FF ctermfg=213 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsClassDefinition guifg=#FB94FF ctermfg=213 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsClassMethodType guifg=#FF9D00 ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsObjectKey guifg=#00FFC8 ctermfg=121 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsFunctionKey guifg=#FAD000 ctermfg=220 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsObjectMethodType guifg=#FAD000 ctermfg=220 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsArrowFunction guifg=#FAD000 ctermfg=220 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsRestExpression guifg=#FF9D00 ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsObjectProp guifg=#FAD000 ctermfg=228 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsFlowDefinition guifg=#FAD000 ctermfg=220 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsFlowArgumentDef guifg=#FAD000 ctermfg=220 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsFlowType guifg=#00FFC8 ctermfg=121 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsFlowObject guifg=#FF0055 ctermfg=195 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsFlowTypeStatement guifg=#FAD000 ctermfg=220 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsFlowMaybe guifg=#FF9D00 ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsFlowReturn guifg=#FAD000 ctermfg=220 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsFuncArgs guifg=#FF0055 ctermfg=195 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsFuncName guifg=#FAD000 ctermfg=220 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsFunction guifg=#FB94FF ctermfg=213 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsGenerator guifg=#00FFC8 ctermfg=159 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsStatement guifg=#FF9D00 ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi javaScriptCharacter guifg=#00FFC8 ctermfg=159 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi javaScriptOperator guifg=#FF9D00 ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi javaScriptType guifg=#00FFC8 ctermfg=121 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi javaScriptStatement guifg=#FF9D00 ctermfg=214 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi javaScriptError guifg=#FF4081 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi javaScriptParensError guifg=#FF4081 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi javaScriptNull guifg=#6AAEFE ctermfg=204 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi javaScriptBoolean guifg=#6AAEFE ctermfg=204 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi javaScriptRegexpString guifg=#FF0055 ctermfg=195 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi javaScriptIdentifier guifg=#00FFC8 ctermfg=159 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi javaScriptLabel guifg=#00FFC8 ctermfg=159 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi javaScriptException guifg=#FF4081 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi javaScriptMember guifg=#FAD000 ctermfg=228 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi xmlAttrib guifg=#FAD000 ctermfg=220 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi xmlEndTag guifg=#00FFC8 ctermfg=121 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi xmlTag guifg=#00FFC8 ctermfg=121 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi xmlTagName guifg=#00FFC8 ctermfg=121 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsonString guifg=#92FC79 ctermfg=120 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsonEscape guifg=#6AAEFE ctermfg=204 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsonNumber guifg=#6AAEFE ctermfg=204 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsonNull guifg=#6AAEFE ctermfg=204 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsonBoolean guifg=#6AAEFE ctermfg=204 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsonKeyword guifg=#FAD000 ctermfg=220 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsonNumError guifg=#FF4081 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsonCommentError guifg=#FF4081 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsonSemicolonError guifg=#FF4081 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsonTrailingCommaError guifg=#FF4081 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsonMissingCommaError guifg=#FF4081 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsonStringSQError guifg=#FF4081 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsonNoQuotesError guifg=#FF4081 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi jsonTripleQuotesError guifg=#FF4081 ctermfg=203 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi htmlH1 guifg=#FAD000 ctermfg=220 guibg=NONE ctermbg=NONE gui=Bold cterm=Bold
+hi link htmlH2 htmlH1
+hi link htmlH3 htmlH1
+hi htmlH4 guifg=#FAD000 ctermfg=220 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi link htmlH5 htmlH4
+hi link htmlH6 htmlH4
+hi tsExportDefault guifg=#FAD000 ctermfg=220 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi tsFuncArgs guifg=#00FFC8 ctermfg=159 guibg=NONE ctermbg=NONE gui=Italic cterm=Italic
+hi typescriptParameters guifg=#00FFC8 ctermfg=159 guibg=NONE ctermbg=NONE gui=Italic cterm=Italic
+hi tsThis guifg=#FF9D00 ctermfg=214 guibg=NONE ctermbg=NONE gui=Italic cterm=Italic
+hi tsxAttrib guifg=#FAD000 ctermfg=220 guibg=NONE ctermbg=NONE gui=Italic cterm=Italic
+hi tsxComment guifg=#D57BFF ctermfg=135 guibg=NONE ctermbg=NONE gui=Italic cterm=Italic
+hi typescriptLineComment guifg=#D57BFF ctermfg=135 guibg=NONE ctermbg=NONE gui=Italic cterm=Italic
+hi tsxTagName guifg=#00FFC8 ctermfg=159 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi tsxTag guifg=#FF0055 ctermfg=195 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi tsxCloseTag guifg=#FF0055 ctermfg=195 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi tsxCloseString guifg=#00FFC8 ctermfg=159 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi typescriptStorageClass guifg=#FAD000 ctermfg=220 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi typescriptIdentifier guifg=#00FFC8 ctermfg=159 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi typescriptInterfaceName guifg=#FAD000 ctermfg=220 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi typescriptAliasDeclaration guifg=#FAD000 ctermfg=220 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi typescriptInterfaceKeyword guifg=#FFFC58 ctermfg=229 guibg=NONE ctermbg=NONE gui=Italic cterm=Italic
+hi typescriptAliasKeyword guifg=#FFFC58 ctermfg=229 guibg=NONE ctermbg=NONE gui=Italic cterm=Italic
+hi typescriptExport guifg=#FF9D00 ctermfg=214 guibg=NONE ctermbg=NONE gui=Italic cterm=Italic
 
-call HighlightFor("Function",   "#d57bff", "NONE", "NONE")
-call HighlightFor("Identifier", "#EEFFFF", "NONE", "NONE")
+if exists('*term_setansicolors')
+  let g:terminal_ansi_colors = repeat([0], 16)
 
-call HighlightFor("PreProc", "#00FF9C", "NONE", "NONE")
+endif
 
-call HighlightFor("Type",      "#00FF9C", "NONE", "NONE")
-call HighlightFor("Structure", "#00FF9C", "NONE", "NONE")
-call HighlightFor("Typedef",   "#00FF9C", "NONE", "NONE")
-
-call HighlightFor("Underlined", "NONE",    "NONE",    "NONE")
-call HighlightFor("Todo",       "#00FF9C", "#372963", "italic")
-call HighlightFor("Error",      "#ff3270", "NONE",   "undercurl")
-call HighlightFor("WarningMsg", "#009550", "NONE",   "NONE")
-call HighlightFor("Special",    "#00FF9C", "NONE",   "italic")
-call HighlightFor("Tag",        "#00FF9C", "NONE",    "undercurl")
-" }}}
-
-" Pmenu {{{
-call HighlightFor("Pmenu",      "#ff0055", "#140007", "NONE")
-call HighlightFor("PmenuSel",   "#140007", "#ff0055", "NONE")
-call HighlightFor("PmenuSbar",  "NONE",    "#ff0055", "NONE")
-call HighlightFor("PmenuThumb", "NONE",    "NONE",    "NONE")
-" }}}
-
-" Status line {{{
-call HighlightFor("StatusLine",   "#ff0055", "#1d000a", "bold")
-call HighlightFor("StatusLineNC", "#ff0055", "#000000", "NONE")
-" }}}
-
-" Tab pages {{{
-call HighlightFor("TabLine",     "#FF4081", "NONE", "NONE")
-call HighlightFor("TabLineFill", "NONE",    "NONE", "NONE")
-call HighlightFor("TabLineSel",  "#FF4081", "NONE", "bold")
-" }}}
-
-" Folds {{{
-call HighlightFor("Folded",     "#00FFC8", "NONE", "italic")
-call HighlightFor("FoldColumn", "#00FFC8", "NONE", "NONE")
-" }}}
-
+if has('nvim')
+endif

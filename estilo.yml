@@ -1,0 +1,18 @@
+name: 'cyberpunk'
+version: '1.0.0'
+license: 'MIT'
+author: 'Neftali Forero'
+url: ''
+description: ''
+colorschemes:
+  - name: cyberpunk
+    background: 'dark'
+    palette: cyberpunk
+airline:
+  - name: cyberpunk 
+    palette: cyberpunk
+    style: cyberpunk
+lightline:
+  - name: cyberpunk
+    palette: cyberpunk 
+    style: cyberpunk
